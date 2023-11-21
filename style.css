@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@700&family=Sarala:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Righteous&family=Roboto:wght@400;700&family=Sarala:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@500&family=Righteous&family=Roboto:wght@400;700&family=Sarala:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -7,27 +8,23 @@
 }
 
 body {
+    box-sizing: border-box;
     display: flex;
-    background-color: #545588;
     height: 100vh;
     padding: 12px 17px;
-    box-sizing: border-box;
+    background-color: #545588;
 }
 
 .container {
     position: relative;
-    background-color: #ffffff;
-    border-radius: 24px;
-    padding: 24px;
+    z-index: 10;
     display: flex;
     flex: 1;
     flex-direction: column;
-    z-index: 10;
+    padding: 24px;
     overflow: hidden;
-}
-
-header {
-
+    background-color: #ffffff;
+    border-radius: 24px;
 }
 
 .welcome {
@@ -41,30 +38,31 @@ header {
 
 .subtitle {
     font-family: 'Lato', sans-serif;
-    color: #505050;
+    color: #666666;
+    font-weight: 300;
 }
 
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 60px;
-    margin-top: 70px;
+    gap: 40px;
+    margin-top: 60px;
 }
 
 .back-button {
-    background-color: #dcdcdc;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50px;
-    outline: inherit;
-    font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #939393;
+    width: 40px;
+    height: 40px;
     padding-right: 5px;   
+    border: none;
+    border-radius: 50px;
+    outline: inherit;
+    background-color: #dcdcdc;
+    font-size: 30px;
+    color: #939393;
 }
 
  
@@ -76,42 +74,52 @@ form {
     outline: none;
     background: none;
     text-transform: none;
-    line-height: 32px;
+    line-height: 40px;
     font-size: 1.3rem;
     font-weight: 400;
-    color: #b6b2b2;
+    color: #838383;
   
 }
 
 .input-style {
+    flex: 1;
     border-bottom-width: 0.5px;
     border-bottom-style: solid;
-    flex: 1;
+}
+
+.button-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .button-login {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-    margin:0 50px ;
-    padding: 6px 30px;
+    align-items: center;
+    padding: 5px 50px;
     border-radius: 50px;
     background-color: black;
     color: #ffffff;
     font-size: 30px;
-    font-weight: 600;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
 }
 
 .container-actions {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 5px;
+    margin-top: 20px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 13px;
+    color: #838383;
+    letter-spacing: 0.2px;
 }
 
 .content {
@@ -122,26 +130,25 @@ form {
 
 .circle-1 {
     position: absolute;
+    z-index: 1;
     background-color: 
     #e1f9db; 
     border-radius: 50%;
-    z-index: 1;
-  }
+}
   
 .circle-2 {
     position: absolute;
+    z-index: 1;
     background-color: 
     #e1f9db; 
     border-radius: 50%;
-    z-index: 1;
   }
 
-
-  @media (max-width: 768px) {
+   @media (max-width: 379px) {
     .circle-1 {
         width: 70vw;
         height: 70vw;
-        bottom: 65vw;
+        bottom: 60vw;
         left: -20vw;
       }
       
@@ -149,7 +156,23 @@ form {
         width: 120vw;
         height: 120vw;
         bottom: -30vw;
-        left: -30vw;
+        left: -29vw;
+      }
+  }
+
+  @media (min-width: 452px) and (max-width: 768px) {
+    .circle-1 {
+        width: 70vw;
+        height: 70vw;
+        bottom: 45vw;
+        left: -20vw;
+      }
+      
+    .circle-2 {
+        width: 120vw;
+        height: 120vw;
+        bottom: -40vw;
+        left: -29vw;
       }
   }
   
@@ -172,24 +195,30 @@ form {
 
   @media (min-width: 1025px) {
     
+    .container {
+        padding: 10px 50px;
+        overflow: hidden;
+        background-color: #ffffff;
+        border-radius: 24px;
+    }
+
     form {
         gap: 30px;
         margin-top: 40px;
     }
-
-   
+  
 
     .circle-1 {
-        width: 15vw;
-        height: 15vw;
+        width: 20vw;
+        height: 20vw;
         bottom: 15vw;
-        left: -5vw;
+        left: -4vw;
       }
       
     .circle-2 {
-        width: 30vw;
-        height: 30vw;
-        bottom: -10vw;
+        width: 40vw;
+        height: 40vw;
+        bottom: -15vw;
         left: -10vw;
       }
   }
